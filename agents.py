@@ -10,7 +10,7 @@ from tools import web_search, fetch_arxiv
 from memory import load_recent_memory, save_to_memory
 
 HAIKU  = "gemini-2.5-flash"   # planning, scoring — cheap
-SONNET = "gemini-2.5-pro"     # writing — quality matters
+SONNET = "gemini-2.5-flash"   # writing — quality matters (using flash for free tier compatibility)
 
 def _call(model: str, system: str, user: str, max_tokens: int = 1000) -> str:
     """
