@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>The Vahaz Daily OS</title>
+    <style>
+        h2 {
+            font-family: Georgia, serif;
+            font-size: 22px;
+            color: #111111;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+        h3 {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            color: #2c3e50;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-top: 0;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+        blockquote {
+            margin: 20px 0;
+            padding: 12px 20px;
+            border-left: 4px solid #1a1a1a;
+            background-color: #f7f9fa;
+            font-style: italic;
+            color: #333333;
+        }
+        code {
+            font-family: 'Consolas', 'Courier New', Courier, monospace;
+            font-size: 14px;
+            background-color: #f1f3f5;
+            padding: 2px 5px;
+            border-radius: 3px;
+            color: #c7254e;
+        }
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border: 1px solid #e9ecef;
+            margin: 20px 0;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            color: #212529;
+            font-size: 13px;
+        }
+        hr {
+            border: 0;
+            border-top: 1px solid #dee2e6;
+            margin: 35px 0;
+        }
+        ul, ol {
+            padding-left: 20px;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 30px 0; background-color: #f4f6f8; font-family: Georgia, serif; color: #1a1a1a; -webkit-font-smoothing: antialiased;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 680px; background-color: #ffffff; border: 1px solid #e1e8ed; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); overflow: hidden;">
+        <!-- Header -->
+        <tr>
+            <td style="padding: 40px 40px 20px 40px; text-align: center; border-bottom: 2px solid #1a1a1a;">
+                <h1 style="margin: 0 0 10px 0; font-family: Georgia, serif; font-size: 34px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; color: #1a1a1a;">The Vahaz Daily OS</h1>
+                <div style="font-size: 14px; color: #657786; font-style: italic; letter-spacing: 0.5px;">2026-06-25</div>
+            </td>
+        </tr>
+        <!-- Content -->
+        <tr>
+            <td style="padding: 40px; font-size: 16px; line-height: 1.6; color: #1a1a1a;">
+                <p><strong>As-salamu alaykum, and a very good morning to the sharpest minds in engineering!</strong></p>
+<p>This is Vahaz, back with another edition of 'The Vahaz Daily OS'. From Skyworks' intricate RF chains to the academic rigors of BITS Pilani, I’m constantly immersed in systems that push the boundaries of performance and efficiency. Today, we're dissecting the silicon frontier, the AI inference crunch, and some bedrock digital design principles, all through a systems lens. Let's dive in.</p>
+<hr />
+<h2>§ Semiconductor Industry</h2>
+<p>TSMC continues its relentless march towards the bleeding edge with its 2nm (N2) process node, slated for mass production in the second half of 2025 and ramping to an anticipated 60K wafers per month by 2026. This isn't just another shrink; N2 marks TSMC's pivotal transition from FinFET to Gate-All-Around (GAAFET) nanosheet transistors. Why GAAFET? As feature sizes plummet below 5nm, FinFETs struggle with maintaining effective electrostatic control over the channel, leading to increased leakage currents and reduced performance scaling. GAAFETs, with gates encircling the channel on all four sides, offer superior gate control, significantly reducing leakage and enhancing drive current at aggressively scaled dimensions.</p>
+<p>The economic implications are substantial: N2 wafers are projected to be 50% more expensive than 3nm, a clear indicator of the escalating R&amp;D, advanced lithography (EUV multiple patterning), and yield ramp challenges inherent in these nodes. Early yield projections for any new architecture like GAAFET are notoriously difficult, often starting low and gradually improving over quarters, directly impacting initial cost-per-die. Furthermore, N2 is expected to incorporate Backside Power Delivery (BSPD) for future iterations (N2P), a critical innovation that separates power lines from signal interconnects. This reduces IR drop, improves signal integrity by decreasing noise, and allows for tighter transistor packing, directly addressing thermal and density limitations that plague current designs. The industry is watching closely, as N2 sets the stage for future scaling and performance benchmarks, forcing competitors like Intel (with its RibbonFET) to accelerate their own GAA roadmaps.</p>
+<h2>§ AI Hardware</h2>
+<p>The sheer computational demands of modern AI models, particularly for inference, are pushing hardware architects to rethink traditional designs, exemplified by NVIDIA's Blackwell B200 and GB200 architectures. The B200 GPU alone delivers 2.5x the performance of an H100, consuming around 700W – a stark illustration of the power-performance trade-offs inherent in maximizing FLOPs. However, the true game-changer for large language model (LLM) inference is the GB200 Superchip, which combines Grace CPUs with Blackwell GPUs, delivering an astonishing 30x inference speedup over the H100 at 1,200W.</p>
+<p>This massive performance is unlocked not just by raw compute, but by addressing the memory wall. The GB200 NVL72 rack, for instance, integrates 72 Blackwell GPUs and 36 Grace CPUs, collectively offering up to 13.5TB of HBM3E memory. Crucially, the NVLink interconnect within this system boasts a staggering 130 terabytes per second (TB/s) of low-latency, high-bandwidth communication between GPUs. This directly combats memory-bound bottlenecks, ensuring that the colossal FLOPs generated by the GPUs aren't starved for data, leading to higher utilization rates. Meanwhile, Apple's M4 Neural Engine, with its 16-core design capable of 38 trillion operations per second (TOPS), represents an alternative approach—highly efficient, tightly integrated on-device AI acceleration, optimizing for performance-per-watt in a constrained thermal envelope, fundamentally altering the economics of edge AI inference.</p>
+<h2>§ Digital Design Concept</h2>
+<p>Before the age of complex System-on-Chips (SoCs), most digital designs operated within a single clock domain. Simpler times, indeed.</p>
+            </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+            <td style="padding: 30px 40px; text-align: center; background-color: #f8f9fa; border-top: 1px solid #e1e8ed; font-size: 12px; color: #657786;">
+                <p style="margin: 0 0 8px 0; font-weight: bold; letter-spacing: 0.5px; text-transform: uppercase;">Your personal knowledge operating system</p>
+                <p style="margin: 0;">Designed for Vahaz &bull; BITS Pilani &bull; Skyworks Intern</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
